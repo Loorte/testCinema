@@ -15,4 +15,12 @@ class Arena extends Model
       'count_point',
       'is_delete'
     ];
+
+    protected $appends = [
+      'get_count'
+    ];
+
+    public function getGetCountAttribute() {
+      return $this->count_line * $this->count_point;
+    }
 }
